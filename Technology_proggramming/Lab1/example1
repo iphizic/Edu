@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# coding: utf8
+# Basic data types
+a = 5
+b = 7.0
+c = 2>4
+d = "World"
+e = 1.5 + 0.5j
+
+print type(a) # int
+print type(b) # float
+print type(c) # boolean
+print type(d) # string
+print type(e) # complex
+
+print a, b, c, d, e.real, e.imag
