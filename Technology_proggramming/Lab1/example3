@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# coding: utf8
+
+#*****************************************
+# Lists
+#*****************************************
+
+clouds = ["St", "Sc", "Ns", "As", "Ac"]
+
+print type(clouds)
+print clouds
+
+clouds.append("Cu")
+print clouds
+
+clouds.append("Cb")
+print clouds
+
+clouds.sort()
+print clouds
+
+print clouds[2]
+print clouds[2:5]
+print clouds[2:]
+print clouds[:5]
+print clouds[2:5:2]
+print clouds[2::2]
+print clouds[::2]
