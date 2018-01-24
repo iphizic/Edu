@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+# coding: utf8
+
+#*****************************************
+# Write text file
+#*****************************************
+
+filename = "mydata.txt"
+
+# Open the file
+fd = open(filename, "w")
+
+# Write values in file
+for i in range(10):
+	A = i*18
+	fd.write("%i\t%.1f\n" % (i, A))
+
+# Close file
+fd.close()

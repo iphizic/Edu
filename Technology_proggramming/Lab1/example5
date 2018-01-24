@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# coding: utf8
+
+#from numpy import *
+
+#*****************************************
+# Cycle "for"
+#*****************************************
+
+for i in range(10):
+	print i
+
+A = []
+for i in range(10):
+	A.append(i**i)
+
+B = [0]*10
+for i in range(10):
+	B[i] = i**i
+
+print A
+print B
