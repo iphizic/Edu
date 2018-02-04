@@ -1,8 +1,9 @@
 #include <iostream>
 #include <iomanip>
-
+#include <fstream>
 int main()
 {
+	std::ofstream fout("test.txt");
 	int a=11;
 	int b=11;
 	int **m = new int *[a];
@@ -38,8 +39,10 @@ int main()
 	for(int i = 0; i<a; i++){
 		for(int k=0; k<b; k++){
 			std::cout<<std::setw(3)<< m[i][k];
+			fout<<std::setw(3)<< m[i][k];
 		};
 		std::cout<< "\n";
+		fout<<"\n";
 	};
 	
 	for(int i = 0; i<a; i++) 
