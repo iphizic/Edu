@@ -1,33 +1,32 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <string>
 int main()
 {
-	std::ofstream fout("test.txt");
+	std::string filename;
+	std::cout<<"Введите имя файла>";
+	std::cin>>filename;
+	std::ofstream fout(filename);
 	int a=11;
 	int b=11;
 	int **m = new int *[a];
 	for(int i = 0; i<a; i++) 
 		m[i] = new int[b];
-
-	/*for(int i = 0; i<a; i++){
-		for(int k=0; k<b; k++){
-			m[i][k]= 0;
-			std::cout<<std::setw(3)<< m[i][k];
-		};
-		std::cout<< "\n";
-	};*/
-	
+	std::cout<<"Введите длинну поля>";
+	std::cin>>a;
+	std::cout<<"Введите ширину поля>";
+	std::cin>>b;
 	int num = (a<b?a:b)/2+a%2;
 	
 	a--;
 	b--;
-	for(int i = num-1 ; i>=0 ; --i){
+	for(int i = num ; i>=0 ; --i){
 		for(int k = i; k<=b-i; k++){
 			m[i][k] = i+1;
 			m[a-i][k] = i+1;
 		};
-		for(int k = i+1; k<a-i; k++){
+		for(int k = i; k<=a-i; k++){
 			m[k][i] = i+1;
 			m[k][b-i] = i+1;
 		};
@@ -45,6 +44,10 @@ int main()
 		fout<<"\n";
 	};
 	
+	fout.close();
+
+	std::cout<<"Запись в файл "<<filename<<" окончена."<<"\n";
+
 	for(int i = 0; i<a; i++) 
 		delete [] m[i];
 	delete [] m;
