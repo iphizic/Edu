@@ -4,19 +4,19 @@
 #include <string>
 int main()
 {
+	int a=11;
+	int b=11;
 	std::string filename;
 	std::cout<<"Введите имя файла>";
 	std::cin>>filename;
 	std::ofstream fout(filename);
-	int a=11;
-	int b=11;
-	int **m = new int *[a];
-	for(int i = 0; i<a; i++) 
-		m[i] = new int[b];
 	std::cout<<"Введите длинну поля>";
 	std::cin>>a;
 	std::cout<<"Введите ширину поля>";
 	std::cin>>b;
+	int **m = new int *[a];
+	for(int i = 0; i<a; i++) 
+		m[i] = new int[b];
 	int num = (a<b?a:b)/2+a%2;
 	
 	a--;
